@@ -1,0 +1,36 @@
+import time
+
+def countdown_timer():
+    my_time=int(input("Enter the time in second: "))
+    for x in range(my_time,0,-1):
+        seconds=x%60
+        minutes=int(x/60)%60
+        hours=int(x/3600)
+        print(f"{hours:02}:{minutes:02}:{seconds:02}")
+        time.sleep(1)
+
+    print("TIME'S UP")
+
+countdown_timer()
+
+# import the time module 
+import time 
+
+# define the countdown func. 
+def countdown(t): 
+	
+	while t: 
+		mins, secs = divmod(t, 60) 
+		timer = '{:02d}:{:02d}'.format(mins, secs) 
+		print(timer, end="\r") 
+		time.sleep(1) 
+		t -= 1
+	
+	print('Fire in the hole!!') 
+
+
+# input time in seconds 
+t = input("Enter the time in seconds: ") 
+
+# function call 
+countdown(int(t)) 
